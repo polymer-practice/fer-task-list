@@ -11,13 +11,16 @@
                 --font-weight: 300;
             }
 
+            ul li {
+                list-style-type: none;
+            }
+
         </style>
-        <template>
             <div class="list-container">
                 <ul>
                     <template is="dom-repeat" items="[[taskList]]">
                         <li>
-                            <fer-task-element key="[[item.key]]" title="[[title.canceled]" canceled="[[item.canceled]]"
+                            <fer-task-element key="[[item.id]]" title="[[item.title]]" canceled="[[item.cancel]]"
                                               done="[[item.done]]">
 
                             </fer-task-element>
@@ -25,7 +28,6 @@
                     </template>
                 </ul>
             </div>
-        </template>
 
     </template>
 
