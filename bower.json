@@ -2,7 +2,8 @@
   "name": "fer-task-list",
   "main": "fer-task-list.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^2.0.0"
+    "polymer": "Polymer/polymer#^2.0.0",
+    "fer-task-element": "git@github.com:polymer-practice/fer-tastk-element.git"
   },
   "devDependencies": {
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",

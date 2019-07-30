@@ -1,36 +1,51 @@
 <link rel="import" href="../polymer/polymer-element.html">
-
+<link rel="import" href="../fer-task-element/fer-task-element.html">
 <dom-module id="fer-task-list">
-  <template>
-    <style>
-      :host {
-        display: block;
-      }
-    </style>
-    <h2>Hello [[prop1]]!</h2>
-  </template>
+    <template>
+        <style>
+            :host {
+                display: block;
+                --form-task-primary-color: var(--primary-color, #3f51b5);
+                --form-task-secundary-color: var(--secundary-color, #ffff);
+                --font-size: 15px;
+                --font-weight: 300;
+            }
 
-  <script>
-    /**
-     * `fer-task-list`
-     * 
-     *
-     * @customElement
-     * @polymer
-     * @demo demo/index.html
-     */
-    class FerTaskList extends Polymer.Element {
-      static get is() { return 'fer-task-list'; }
-      static get properties() {
-        return {
-          prop1: {
-            type: String,
-            value: 'fer-task-list'
+        </style>
+        <template>
+            <div class="list-container">
+                <ul>
+                    <template is="dom-repeat" items="[[taskList]]">
+                        <li>
+                            <fer-task-element key="[[item.key]]" title="[[title.canceled]" canceled="[[item.canceled]]"
+                                              done="[[item.done]]">
+
+                            </fer-task-element>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </template>
+
+    </template>
+
+    <script>
+
+      class FerTaskList extends Polymer.Element {
+        static get is () {
+          return 'fer-task-list'
+        }
+
+        static get properties () {
+          return {
+            taskList: {
+              type: Array,
+              value: []
+            },
           }
-        };
+        }
       }
-    }
 
-    window.customElements.define(FerTaskList.is, FerTaskList);
-  </script>
+      window.customElements.define(FerTaskList.is, FerTaskList)
+    </script>
 </dom-module>

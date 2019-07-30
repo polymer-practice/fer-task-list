@@ -22,8 +22,39 @@
       <h3>Basic fer-task-list demo</h3>
       <demo-snippet>
         <template>
-          <fer-task-list></fer-task-list>
+          <fer-task-list id="my-list"></fer-task-list>
         </template>
+          <script>
+              let ferTaskElement = document.getElementById('my-list')
+
+              let list = [
+                {
+                  title: 'play',
+                  id: 1,
+                  cancel: false,
+                  done: true,
+                },
+                {
+                  title: 'sleep',
+                  id: 2,
+                  cancel: true,
+                  done: false,
+                },
+                {
+                  title: 'buy',
+                  id: 3,
+                  cancel: true,
+                  done: true,
+                },
+                {
+                  title: 'dance',
+                  id: 4,
+                  cancel: false,
+                  done: false,
+                }
+              ]
+
+          </script>
       </demo-snippet>
     </div>
   </body>
